@@ -1,0 +1,171 @@
+/* Everything */
+@media screen {
+    * {
+        box-sizing: border-box;
+    }
+    /* allow container to breathe */
+    .container {
+        /* margin: 5% 0%; */
+        display: flex;
+        flex-wrap: wrap;
+    }
+    hr {
+        border: none;
+        background-color: #607484;
+        color: #607484;
+    }
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .project {
+        text-align: center;
+    }
+    .img-backdrop {
+        width: 100%;
+    }
+}
+
+/* For small and medium screens */
+@media screen and (max-width: 949px) {
+    /* Wrap the aside (and not a sidebar) */
+    .main {
+        order: 1;
+    }
+    aside {
+        display: flex;
+        flex-wrap: wrap;
+        order: 2;
+    }
+    /* Make the rule small */
+    hr {
+        margin-top: 1px;
+        height: 2px;
+    }
+    /* Not ideal but avoids spilling */
+    p {
+        overflow: auto;
+    }
+}
+
+
+/* Small screens. */
+@media screen and (max-width: 439px) {
+
+    /* center header */
+    h1, h2, h3 {
+        text-align: center;
+    }
+    .header > img {
+        display: block;
+        margin: auto;
+    }
+    /* small color pickers */
+    .color-picker {
+        text-align: center;
+        padding: 1px;
+        margin: 2px;
+    }
+    
+    /* small featured projects */
+    .project, .color-picker {
+        width: 120px;
+        margin: 2px;
+    }
+    .project h3, .project h2, .color-picker h3 {
+        font-size: small;
+    }
+    .project img, .color-picker img {
+        width: 65px;
+        height: 65px;
+    }
+
+}
+
+/* Medium screens */
+@media (min-width: 440px) and (max-width: 949px) {
+    .aside-spacer {
+      height: 120px;
+    }
+
+    /* med color pickers */
+    .color-picker {
+        text-align: center;
+        padding: 1px;
+        margin: 2px;
+    }
+
+    /* med featured projects */
+    .project, .color-picker {
+        width: 120px;
+        margin: 2px;
+    }
+    .project h3, .project h2, .color-picker h3 {
+        font-size: medium;
+    }
+    .project img, .color-picker img  {
+        width: 95px;
+        height: 95px;
+    }
+    /* Float the header */
+    .logo-left {
+        float: left;
+    }
+    .name-right {
+        float: right;
+    }
+    .clearfix:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+
+/* Large screens. */
+@media screen and (min-width: 950px) {
+    .aside-spacer {
+      height: 120px;
+    }
+
+    /* float the aside with main */
+    aside {
+        float: left;
+        width: 95px;
+        margin-left: 0px;
+        margin-right: 40px;
+    }
+    .main {
+        float: right;
+        width: 80%;
+    }
+    /* different style when floating on side */
+    .color-picker {
+        text-align: right;
+    }
+
+    /* Float the header */
+    .logo-left {
+        float: left;
+    }
+    .name-right {
+        float: right;
+    }
+    .clearfix:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    .project {
+        margin: 2px;
+        width: 154px;
+    }
+
+    /* Make the rule bigger */
+    hr {
+        margin-top: 2px;
+        height: 4px;
+    }
+
+}

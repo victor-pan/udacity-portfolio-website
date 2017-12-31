@@ -1,0 +1,1 @@
+Sample html page to practice skills learned in the HTML/CSS course.
