@@ -56,6 +56,10 @@
     h1, h2, h3 {
         text-align: center;
     }
+    .logo-left {
+        text-align: center;
+    }
+    
     .header > img {
         display: block;
         margin: auto;
@@ -66,7 +70,6 @@
         padding: 1px;
         margin: 2px;
     }
-    
     /* small featured projects */
     .project, .color-picker {
         width: 120px;
@@ -107,12 +110,22 @@
         width: 95px;
         height: 95px;
     }
-    /* Float the header */
+    /* Position the header using flex grids */
+    .header {
+        display: flex;
+    }
     .logo-left {
-        float: left;
+        width: 50%;
+    }
+    .logo-left a {
+        position: relative;
+        top: 20px;
     }
     .name-right {
-        float: right;
+        width: 50%;
+    }
+    .name-right h3, .name-right h1 {
+        text-align: right;
     }
     .clearfix:after {
         content: '';
@@ -144,12 +157,24 @@
         text-align: right;
     }
 
-    /* Float the header */
+    /* Position the header using flex grids */
+    .header {
+        display: flex;
+    }
     .logo-left {
-        float: left;
+        width: 50%;
+        /* float: left; */
+    }
+    .logo-left a {
+        position: relative;
+        top: 20px;
     }
     .name-right {
-        float: right;
+        width: 50%;
+        /* float: right; */
+    }
+    .name-right h3, .name-right h1 {
+        text-align: right;
     }
     .clearfix:after {
         content: '';
