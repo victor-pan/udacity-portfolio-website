@@ -1,77 +1,90 @@
-/* Everything */
+/* Styles that apply regardless of screen size */
 @media screen {
+
     * {
         box-sizing: border-box;
     }
-    /* allow container to breathe */
+
+    /* use flexbox to allow changing the order based on screen size */
     .container {
-        /* margin: 5% 0%; */
         display: flex;
         flex-wrap: wrap;
     }
+
     hr {
         border: none;
         background-color: #607484;
         color: #607484;
     }
+
     .projects {
         display: flex;
         flex-wrap: wrap;
+        margin: 0;
     }
+
     .project {
         text-align: center;
     }
+
     .img-backdrop {
         width: 100%;
     }
+
+    /* Avoids spilling of image descriptions into neighboring elements */
+    /* (especially below 440 pixels) */
+    p {
+        overflow: auto;
+    }
+
 }
 
-/* For small and medium screens */
+/* Styles for small and medium size screens */
 @media screen and (max-width: 949px) {
-    /* Wrap the aside (and not a sidebar) */
+
+    /* Wrap the aside, not a sidebar, to save horizontal space */
     .main {
         order: 1;
     }
+
     aside {
         display: flex;
         flex-wrap: wrap;
         order: 2;
     }
-    /* Make the rule small */
+
+    /* Smaller horizontal line */
     hr {
         margin-top: 1px;
         height: 2px;
     }
-    /* Not ideal but avoids spilling */
-    p {
-        overflow: auto;
-    }
-}
 
-
-/* Small screens. */
-@media screen and (max-width: 439px) {
-
-    /* center header */
-    h1, h2, h3 {
-        text-align: center;
-    }
-    .logo-left {
-        text-align: center;
-    }
-    
-    .header > img {
-        display: block;
-        margin: auto;
-    }
-    /* small color pickers */
+    /* color pickers centered for central (non-sidebar) view */
     .color-picker {
         text-align: center;
         padding: 1px;
         margin: 2px;
     }
-    /* small featured projects */
+
+}
+
+
+/* Styles for small screens. */
+@media screen and (max-width: 439px) {
+
+    /* center header to save even more space */
+    header {
+        text-align: center;
+    }
+    
+    header img {
+        display: block;
+        margin: auto;
+    }
+    
+    /* small project cards */
     .project, .color-picker {
+        font-size: small;
         width: 120px;
         margin: 2px;
     }
@@ -85,23 +98,38 @@
 
 }
 
-/* Medium screens */
-@media (min-width: 440px) and (max-width: 949px) {
-    .aside-spacer {
-      height: 120px;
-    }
+@media screen and (min-width: 440px) {
 
-    /* med color pickers */
-    .color-picker {
-        text-align: center;
-        padding: 1px;
-        margin: 2px;
+    /* Position the header using flex grids */
+    /* for logo-left, text-right justified layout, */
+    /* instead of just viewing the logo above */
+    /* the text. */
+    header {
+        display: flex;
     }
+    .logo-left {
+        width: 50%;
+    }
+    .logo-left a {
+        position: relative;
+        top: 20px;
+    }
+    .name-right {
+        width: 50%;
+    }
+    .name-right h3, .name-right h1 {
+        text-align: right;
+    }
+}
 
-    /* med featured projects */
+/* Styles for medium screens */
+@media screen and (min-width: 440px) and (max-width: 949px) {
+
+    /* medium project cards */
     .project, .color-picker {
         width: 120px;
         margin: 2px;
+        font-size: medium;
     }
     .project h3, .project h2, .color-picker h3 {
         font-size: medium;
@@ -110,33 +138,13 @@
         width: 95px;
         height: 95px;
     }
-    /* Position the header using flex grids */
-    .header {
-        display: flex;
-    }
-    .logo-left {
-        width: 50%;
-    }
-    .logo-left a {
-        position: relative;
-        top: 20px;
-    }
-    .name-right {
-        width: 50%;
-    }
-    .name-right h3, .name-right h1 {
-        text-align: right;
-    }
-    .clearfix:after {
-        content: '';
-        clear: both;
-        display: table;
-    }
 }
 
 
 /* Large screens. */
 @media screen and (min-width: 950px) {
+
+    /* Push aside down to be after horizontal rule */
     .aside-spacer {
       height: 120px;
     }
@@ -145,41 +153,17 @@
     aside {
         float: left;
         width: 95px;
-        margin-left: 0px;
+        margin-left: 0;
         margin-right: 40px;
     }
     .main {
         float: right;
         width: 80%;
     }
-    /* different style when floating on side */
+
+    /* align text differently for sidebar (instead of inline view) */
     .color-picker {
         text-align: right;
-    }
-
-    /* Position the header using flex grids */
-    .header {
-        display: flex;
-    }
-    .logo-left {
-        width: 50%;
-        /* float: left; */
-    }
-    .logo-left a {
-        position: relative;
-        top: 20px;
-    }
-    .name-right {
-        width: 50%;
-        /* float: right; */
-    }
-    .name-right h3, .name-right h1 {
-        text-align: right;
-    }
-    .clearfix:after {
-        content: '';
-        clear: both;
-        display: table;
     }
 
     .project {
